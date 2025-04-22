@@ -20,6 +20,7 @@
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 400
+  - type: Appearance
   - type: MagazineVisuals
     magState: mag
     steps: 2
@@ -65,6 +66,7 @@
     magState: mag
     steps: 5
     zeroVisible: false
+  - type: Appearance
 
 - type: entity
   parent: WeaponPlasmaRifle
@@ -104,7 +106,7 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
     soundEmpty:
-      path: /Audio/DeltaV/Weapons/Guns/Empty/dry_fire.ogg
+      path: /Audio/_DV/Weapons/Guns/Empty/dry_fire.ogg
   - type: Battery
     maxCharge: 1800
     startingCharge: 1800

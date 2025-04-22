@@ -37,6 +37,14 @@ public sealed class BlobFactorySystem : EntitySystem
         {
             blobbernautComponent.Factory = null;
         }
+
+        foreach (EntityUid blobPod in component.BlobPods)
+        {
+            if (TryComp<BlobPodComponent>(blobPod, out var blobPodComponent))
+            {
+                blobPodComponent.Factory = null;
+            }
+        }
     }
 
     private void OnProduceBlobbernaut(EntityUid uid, BlobFactoryComponent component, ProduceBlobbernautEvent args)
@@ -86,7 +94,7 @@ public sealed class BlobFactorySystem : EntitySystem
     private const string Mold = "Mold";
 
     [ValidatePrototypeId<ReagentPrototype>]
-    private const string Bicaridine = "Bicaridine";
+    private const string Probital = "Probital"; // funky
 
     [ValidatePrototypeId<ReagentPrototype>]
     private const string Aluminium = "Aluminium";
@@ -110,7 +118,7 @@ public sealed class BlobFactorySystem : EntitySystem
                 blobGas.AddSolution(new Solution(Mold, FixedPoint2.New(30)),_prototypeManager);
                 break;
             case BlobChemType.RegenerativeMateria:
-                blobGas.AddSolution(new Solution(Bicaridine, FixedPoint2.New(30)),_prototypeManager);
+                blobGas.AddSolution(new Solution(Probital, FixedPoint2.New(30)),_prototypeManager); // funky
                 break;
             case BlobChemType.ExplosiveLattice:
                 blobGas.AddSolution(new Solution(Lexorin, FixedPoint2.New(30))
@@ -152,6 +160,7 @@ public sealed class BlobFactorySystem : EntitySystem
         component.BlobPods.Add(pod);
         var blobPod = EnsureComp<BlobPodComponent>(pod);
         blobPod.Core = blobTileComponent.Core.Value;
+        blobPod.Factory = uid;
         FillSmokeGas((pod,blobPod), blobCoreComponent.CurrentChem);
 
         //smokeOnTrigger.SmokeColor = blobCoreComponent.ChemСolors[blobCoreComponent.CurrentChem];

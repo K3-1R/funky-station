@@ -28,11 +28,16 @@
     - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "outerClothing" ]
+    - map: [ "culteyes" ] # funky cult
+      sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
+      state: "human"
+      shader: unshaded
+      visible: false
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "neck" ]
     - map: [ "back" ]
+    - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -51,6 +56,11 @@
     - map: [ "clownedon" ] # Dynamically generated
       sprite: "Effects/creampie.rsi"
       state: "creampie_human"
+      visible: false
+    - map: [ "culthalo" ] # funky cult
+      sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
+      state: "halo"
+      shader: unshaded
       visible: false
   - type: DamageVisuals
     thresholds: [ 10, 20, 30, 50, 70, 100 ]
@@ -73,6 +83,14 @@
         clownedon: # Not 'creampied' bc I can already see Skyrat complaining about conflicts.
           True: {visible: true}
           False: {visible: false}
+      enum.CultHaloVisuals.CultHalo:
+        culthalo:
+          True: { visible: true }
+          False: { visible: false }
+      enum.CultEyesVisuals.CultEyes:
+          culteyes:
+            True: { visible: true }
+            False: { visible: false }
   - type: StatusIcon
     bounds: -0.5,-0.5,0.5,0.5
   - type: RotationVisuals
@@ -82,8 +100,8 @@
     species: Human
   - type: SlowOnDamage
     speedModifierThresholds:
-      60: 0.7
-      80: 0.5
+      60: 0.8 # DV - Was 0.7
+      80: 0.6 # DV - Was 0.5
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -196,9 +214,18 @@
         type: StoreBoundUserInterface
       enum.HereticLivingHeartKey.Key: # goob edit - heretics
         type: LivingHeartMenuBoundUserInterface
+      enum.BloodCultistCommuneUIKey.Key: # funky edit - cultists
+        type: BloodCultCommuneBoundUserInterface
+        requireInputValidation: false
+      enum.SpellsUiKey.Key: # funky edit - cultists
+        type: SpellsBoundUserInterface
+        requireInputValidation: false
       # Shitmed
       enum.SurgeryUIKey.Key:
         type: SurgeryBui
+      enum.ThavenMoodsUiKey.Key: # impstation edit
+        type: ThavenMoodsBoundUserInterface
+        requireInputValidation: false
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -227,6 +254,7 @@
   - type: Targeting # Shitmed Change
   - type: SurgeryTarget # Shitmed Change
   - type: CanEscapeInventory # GoobStation - Escape being picked up by players
+  - type: SurgeryContaminable # DeltaV - surgery cross contamination
 
 - type: entity
   save: false
@@ -336,12 +364,12 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
-    - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "neck" ]
+    - map: [ "outerClothing" ]
     - map: [ "back" ]
+    - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]

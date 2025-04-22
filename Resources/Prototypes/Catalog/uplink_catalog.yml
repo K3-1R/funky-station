@@ -256,16 +256,16 @@
     - UplinkExplosives
   saleLimit: 1 # WD EDIT
 
-- type: listing
-  id: UplinkSupermatterGrenade
-  name: uplink-supermatter-grenade-name
-  description: uplink-supermatter-grenade-desc
-  productEntity: SupermatterGrenade
-  cost:
-    Telecrystal: 28 # goob
-  categories:
-    - UplinkExplosives
-  saleLimit: 1 # WD EDIT
+#- type: listing
+#  id: UplinkSupermatterGrenade
+#  name: uplink-supermatter-grenade-name
+#  description: uplink-supermatter-grenade-desc
+#  productEntity: SupermatterGrenade
+#  cost:
+#    Telecrystal: 28 # goob
+#  categories:
+#    - UplinkExplosives
+#  saleLimit: 1 # WD EDIT
 
 - type: listing
   id: UplinkWhiteholeGrenade
@@ -799,6 +799,16 @@
 # Disruption
 
 - type: listing
+  id: UplinkAccessBreaker
+  name: uplink-access-breaker-name
+  description: uplink-access-breaker-desc
+  productEntity: AccessBreaker
+  cost:
+    Telecrystal: 30
+  categories:
+  - UplinkDisruption
+
+- type: listing
   id: UplinkEmag
   name: uplink-emag-name
   description: uplink-emag-desc
@@ -1221,6 +1231,17 @@
   saleLimit: 1 # WD EDIT
 
 - type: listing
+  id: UplinkRadioImplanter
+  name: uplink-radio-implanter-name
+  description: uplink-radio-implanter-desc
+  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: synd_label }
+  productEntity: RadioImplanter
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkImplants
+
+- type: listing
   id: UplinkMicroBombImplanter
   name: uplink-micro-bomb-implanter-name
   description: uplink-micro-bomb-implanter-desc
@@ -1315,6 +1336,17 @@
         components:
           - SurplusBundle
   saleLimit: 1 # WD EDIT
+
+- type: listing
+  id: UplinkFakeMindshield
+  name: uplink-fake-mindshield-name
+  description: uplink-fake-mindshield-desc
+  icon: { sprite: Interface/Actions/actions_fakemindshield.rsi, state: icon-on }
+  cost:
+    Telecrystal: 4
+  categories:
+  - UplinkImplants
+
 
 # Wearables
 
@@ -1962,7 +1994,7 @@
   description: uplink-proximity-mine-desc
   productEntity: WetFloorSignMineExplosive
   cost:
-    Telecrystal: 16 # goob - was 20, with my buff made it 25 to be closer to minibomb -panzer well no one uses it! 16 TC better.
+    Telecrystal: 20
   categories:
   - UplinkJob
   conditions:
@@ -1974,6 +2006,82 @@
       components:
       - SurplusBundle
   saleLimit: 1 # WD EDIT
+
+- type: listing
+  id: uplinkJanitorInsul
+  name: uplink-janitor-insul-name
+  description: uplink-janitor-insul-desc
+  productEntity: ClothingHandsGlovesJanitorInsul
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Janitor
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  saleLimit: 1
+
+- type: listing
+  id: uplinkCleanerGrenadeLube
+  name: uplink-cleanade-lube-name
+  description: uplink-cleanade-lube-desc
+  productEntity: CleanerGrenadeLube
+  cost:
+    Telecrystal: 10
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Janitor
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  saleLimit: 3
+
+- type: listing
+  id: uplinkWetFloorSignSlippery
+  name: uplink-slippery-wet-floor-sign-name
+  description: uplink-slippery-wet-floor-sign-desc
+  productEntity: WetFloorSignSlippery
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Janitor
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  saleLimit: 3
+
+- type: listing
+  id: uplinkMopSheathFilled
+  name: uplink-mop-sword-name
+  description: uplink-mop-sword-desc
+  productEntity: MopSheathFilled
+  cost:
+    Telecrystal: 30
+  categories:
+  - UplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Janitor
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+  saleLimit: 1
 
 - type: listing
   id: UplinkSyndicateSpongeBox

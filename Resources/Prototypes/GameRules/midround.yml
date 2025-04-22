@@ -15,12 +15,12 @@
       maxPicks: 10
     maxDifficulty: 2.5
   - type: AntagSelection
-    selectionTime: BeforeJobs # Goobstation
+    selectionTime: IntraPlayerSpawn # Goobstation
     agentName: thief-round-end-agent-name
     definitions:
     - prefRoles: [ Thief ]
       max: 3
-      playerRatio: 25 #funky reduce le rate
+      playerRatio: 20 #funky reduce le rate
       lateJoinAdditional: true
       allowNonHumans: true
       multiAntagSetting: NotExclusive

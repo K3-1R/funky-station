@@ -13,6 +13,9 @@
     requiredLegs: 2
   - type:  HumanoidAppearance
     species: Vox
+    hideLayersOnEquip: #imp
+    - HeadSide
+    - Hair
     #- type: VoxAccent # Not yet coded
   - type: Speech
     speechVerb: Vox
@@ -79,12 +82,17 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
-    - map: [ "outerClothing" ]
+    - map: [ "culteyes" ] # funky cult
+      sprite: "_Funkystation/BloodCult/Effects/culteyes.rsi"
+      state: "vox"
+      shader: unshaded
+      visible: false
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "neck" ]
+    - map: [ "outerClothing" ]
     - map: [ "back" ]
+    - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -103,6 +111,11 @@
     - map: [ "clownedon" ]
       sprite: "Effects/creampie.rsi"
       state: "creampie_vox" # Not default
+      visible: false
+    - map: [ "culthalo" ] # funky cult
+      sprite: "_Funkystation/BloodCult/Effects/halo.rsi"
+      state: "halo"
+      shader: unshaded
       visible: false
   - type: Inventory
     speciesId: vox

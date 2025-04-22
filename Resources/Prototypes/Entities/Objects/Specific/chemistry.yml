@@ -243,6 +243,10 @@
       beaker:
         maxVol: 60
         canReact: false
+  - type: Tag # Funky Station
+    tags:
+    - Cryobeaker
+
 
 - type: entity
   name: bluespace beaker
@@ -532,7 +536,8 @@
     sprite: Objects/Specific/Chemistry/pills.rsi
   - type: Pill
   - type: Food
-    forceFeedDelay: 1
+    delay: 0.6
+    forceFeedDelay: 2
     transferAmount: null
     eatMessage: food-swallow
     useSound: /Audio/Items/pill.ogg
@@ -590,7 +595,7 @@
     areaInsertRadius: 1
     storageInsertSound: /Audio/Effects/pill_insert.ogg
     storageRemoveSound: /Audio/Effects/pill_remove.ogg
-    whitelist: 
+    whitelist:
       tags:
       - Pill
   - type: Dumpable

@@ -22,12 +22,21 @@
     - id: UnknownShuttleMicroshuttle
     - id: UnknownShuttleSpacebus
     - id: UnknownShuttleInstigator
+    - id: UnknownShuttleLoneRoboticist  #Funkystation Custom Shuttle
+    - id: UnknownShuttleFoamRoid  #Funkystation Custom Shuttle
+    - id: UnknownShuttleMouseJumpscare #Funkystation Custom Shuttle
+    - id: UnknownShuttleClownPatrol #Funkystation Custom Shuttle
+    - id: UnknownShuttleWanderingNomad #Funkystation Custom Shuttle
+  
 
 - type: entityTable
   id: UnknownShuttlesFreelanceTable
   table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
     children:
+    - !type:NestedSelector # DeltaV
+      tableId: UnknownShuttlesFreelanceTableDV
     - id: UnknownShuttleSyndieEvacPod
+    - id: UnknownShuttleSkeletonMafia #Funkystation custom shuttle
 
 - type: entityTable
   id: UnknownShuttlesHostileTable

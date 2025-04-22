@@ -3,7 +3,8 @@
 - type: latheRecipe
   abstract: true
   id: BaseElectronicsRecipe
-  category: Circuitry
+  categories:
+  - Circuitry
   completetime: 2
   materials:
     Steel: 100
@@ -142,6 +143,18 @@
   parent: BaseSilverCircuitboardRecipe
   id: HellfireFreezerMachineCircuitBoard
   result: HellfireFreezerMachineCircuitBoard
+
+# Assmos
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: ThermomachineUpgradedFreezerMachineCircuitBoard
+  result: ThermomachineUpgradedFreezerMachineCircuitBoard
+
+# Assmos
+- type: latheRecipe
+  parent: BaseSilverCircuitboardRecipe
+  id: ThermomachineAdvancedFreezerMachineCircuitBoard
+  result: ThermomachineAdvancedFreezerMachineCircuitBoard
 
 - type: latheRecipe
   parent: BaseCircuitboardRecipe
@@ -586,12 +599,6 @@
 
 - type: latheRecipe
   parent: BaseGoldCircuitboardRecipe
-  id: StationAnchorCircuitboard
-  result: StationAnchorCircuitboard
-  completetime: 8
-
-- type: latheRecipe
-  parent: BaseGoldCircuitboardRecipe
   id: ReagentGrinderIndustrialMachineCircuitboard
   result: ReagentGrinderIndustrialMachineCircuitboard
 
@@ -609,3 +616,15 @@
   parent: BaseCircuitboardRecipe
   id: HolopadMachineCircuitboard
   result: HolopadMachineCircuitboard
+
+# Assmos - /tg/ gases
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: ElectrolyzerMachineCircuitboard
+  result: ElectrolyzerMachineCircuitboard
+  
+# Assmos - Bluespace Gas
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: BluespaceGasSenderMachineBoard
+  result: BluespaceGasSenderMachineBoard
